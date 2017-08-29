@@ -1,5 +1,5 @@
-Cassandra Scala Insert  
-======================
+Scala DynamoDB 
+==============
 
 
 ## Spark
