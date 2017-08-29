@@ -52,7 +52,7 @@ class MyDynamoDB(IP: String) {
   }
 
   /**
-    * Insert data into Cassandra
+    * Insert data into DynamoDB
     *
     * @param session_id
     * @param dt
