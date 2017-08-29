@@ -1,7 +1,3 @@
-import java.util.Date
-
-import com.datastax.driver.core.Cluster
-
 import scala.io.Source
 
 class MyDynamoDB(IP: String) {
