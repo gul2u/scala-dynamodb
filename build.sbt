@@ -8,7 +8,6 @@ libraryDependencies ++= Seq(
     "org.apache.spark" % "spark-core_2.11" % "2.1.1" % "provided"
   , "org.apache.spark" % "spark-sql_2.11" % "2.1.1" % "provided"
 
-    // https://mvnrepository.com/artifact/com.amazon.emr/emr-dynamodb-hadoop
   , "com.amazon.emr" % "emr-dynamodb-hadoop" % "4.2.0"
   , "com.amazonaws" % "aws-java-sdk-dynamodb" % "1.10.62"
   , "io.atlassian.aws-scala" %% "aws-scala-dynamodb"  % "6.0.0"
