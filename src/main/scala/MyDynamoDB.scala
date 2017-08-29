@@ -1,4 +1,3 @@
-import scala.io.Source
 import org.apache.hadoop.io.Text
 import org.apache.hadoop.dynamodb.DynamoDBItemWritable
 import org.apache.hadoop.dynamodb.read.DynamoDBInputFormat
