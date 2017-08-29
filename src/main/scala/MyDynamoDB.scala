@@ -12,9 +12,7 @@ class MyDynamoDB(IP: String) {
     */
   def flatFileInserts(filename: String): Unit = {
 
-    println(s"Reading Filename = $filename")
-
-    //val buffer = io.Source.fromFile("data/links.dat")
+    println(s"Reading data from flat file: $filename")
 
     for (line <- Source.fromFile(filename).getLines) {
 
