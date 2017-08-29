@@ -1,10 +1,10 @@
 import scala.io.Source
-//import org.apache.hadoop.io.Text
-//import org.apache.hadoop.dynamodb.DynamoDBItemWritable
-//import org.apache.hadoop.dynamodb.read.DynamoDBInputFormat
-//import org.apache.hadoop.dynamodb.write.DynamoDBOutputFormat
-//import org.apache.hadoop.mapred.JobConf
-//import org.apache.hadoop.io.LongWritable
+import org.apache.hadoop.io.Text
+import org.apache.hadoop.dynamodb.DynamoDBItemWritable
+import org.apache.hadoop.dynamodb.read.DynamoDBInputFormat
+import org.apache.hadoop.dynamodb.write.DynamoDBOutputFormat
+import org.apache.hadoop.mapred.JobConf
+import org.apache.hadoop.io.LongWritable
 
 
 class MyDynamoDB(IP: String) {
@@ -12,15 +12,15 @@ class MyDynamoDB(IP: String) {
 
   def initialize_dynamodb(): Unit = {
 
-//    var jobConf = new JobConf(sc.hadoopConfiguration)
-//    jobConf.set("dynamodb.input.tableName", "test")
-//    jobConf.set("dynamodb.output.tableName", "test")
-//
-//    jobConf.set("mapred.output.format.class", "org.apache.hadoop.dynamodb.write.DynamoDBOutputFormat")
-//    jobConf.set("mapred.input.format.class", "org.apache.hadoop.dynamodb.read.DynamoDBInputFormat")
-//
-//    var names = sc.hadoopRDD(jobConf, classOf[DynamoDBInputFormat], classOf[Text], classOf[DynamoDBItemWritable])
-//    names.count()
+    var jobConf = new JobConf(sc.hadoopConfiguration)
+    jobConf.set("dynamodb.input.tableName", "test")
+    jobConf.set("dynamodb.output.tableName", "test")
+
+    jobConf.set("mapred.output.format.class", "org.apache.hadoop.dynamodb.write.DynamoDBOutputFormat")
+    jobConf.set("mapred.input.format.class", "org.apache.hadoop.dynamodb.read.DynamoDBInputFormat")
+
+    var names = sc.hadoopRDD(jobConf, classOf[DynamoDBInputFormat], classOf[Text], classOf[DynamoDBItemWritable])
+    names.count()
 
   }
 
