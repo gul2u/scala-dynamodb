@@ -8,18 +8,21 @@ object App {
 
   /**
     * Main Method of App Class
+    *
     * @param args
     */
   def main(args: Array[String]) {
 
     get_command_line_parameters(args)
 
-    //    batch_file_test(IP, filename)
+    val dynamo = new MyDynamoDB(IP)
+    dynamo.flatFileInserts(filename)
 
   }
 
   /**
     * Get command line parameters
+    *
     * @param args
     */
   private def get_command_line_parameters(args: Array[String]) = {
