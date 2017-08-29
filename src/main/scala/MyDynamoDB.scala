@@ -28,10 +28,16 @@ class MyDynamoDB(IP: String) {
     jobConf.set("mapred.output.format.class", "org.apache.hadoop.dynamodb.write.DynamoDBOutputFormat")
     jobConf.set("mapred.input.format.class", "org.apache.hadoop.dynamodb.read.DynamoDBInputFormat")
 
-    val names = spark.sparkContext.hadoopRDD(jobConf, classOf[DynamoDBInputFormat]
+    val products = spark.sparkContext.hadoopRDD(jobConf
+                                              , classOf[DynamoDBInputFormat]
                                               , classOf[Text]
                                               , classOf[DynamoDBItemWritable])
-    names.count()
+    val total = products.count()
+
+    println("-----------------------------------------------")
+    println(s"Total number of products: $total")
+    products.foreach(println)
+    println("-----------------------------------------------")
 
   }
 
