@@ -22,8 +22,8 @@ class MyDynamoDB(IP: String) {
 //    df.show()
 
     val jobConf = new JobConf(spark.sparkContext.hadoopConfiguration)
-    jobConf.set("dynamodb.input.tableName", "test")
-    jobConf.set("dynamodb.output.tableName", "test")
+    jobConf.set("dynamodb.input.tableName", "ProductCatalog")
+    jobConf.set("dynamodb.output.tableName", "ProductCatalog")
 
     jobConf.set("mapred.output.format.class", "org.apache.hadoop.dynamodb.write.DynamoDBOutputFormat")
     jobConf.set("mapred.input.format.class", "org.apache.hadoop.dynamodb.read.DynamoDBInputFormat")
