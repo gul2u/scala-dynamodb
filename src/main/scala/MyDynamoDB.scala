@@ -11,7 +11,7 @@ import org.apache.spark.sql.SparkSession
 class MyDynamoDB(IP: String) {
 
 
-  def initialize_dynamodb(): Unit = {
+  def test_dynamodb(): Unit = {
 
     val spark = SparkSession.builder
         .master("local")
@@ -21,7 +21,6 @@ class MyDynamoDB(IP: String) {
 //    val df = spark.read.option("header","true").csv("src/main/resources/test.csv")
 //    df.show()
 
-
     val jobConf = new JobConf(spark.sparkContext.hadoopConfiguration)
     jobConf.set("dynamodb.input.tableName", "test")
     jobConf.set("dynamodb.output.tableName", "test")
@@ -29,7 +28,7 @@ class MyDynamoDB(IP: String) {
     jobConf.set("mapred.output.format.class", "org.apache.hadoop.dynamodb.write.DynamoDBOutputFormat")
     jobConf.set("mapred.input.format.class", "org.apache.hadoop.dynamodb.read.DynamoDBInputFormat")
 
-    var names = spark.sparkContext.hadoopRDD(jobConf, classOf[DynamoDBInputFormat]
+    val names = spark.sparkContext.hadoopRDD(jobConf, classOf[DynamoDBInputFormat]
                                               , classOf[Text]
                                               , classOf[DynamoDBItemWritable])
     names.count()

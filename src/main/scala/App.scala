@@ -16,7 +16,8 @@ object App {
     get_command_line_parameters(args)
 
     val dynamo = new MyDynamoDB(IP)
-    dynamo.flatFileInserts(filename)
+    dynamo.test_dynamodb()
+//    dynamo.flatFileInserts(filename)
 
   }
 
