@@ -1,5 +1,5 @@
 /**
-  * App Class for querying Cassandra
+  * Scala DynamoDB Application Example
   */
 object App {
 
@@ -8,7 +8,6 @@ object App {
 
   /**
     * Main Method of App Class
-    *
     * @param args
     */
   def main(args: Array[String]) {
@@ -21,7 +20,6 @@ object App {
 
   /**
     * Get command line parameters
-    *
     * @param args
     */
   private def get_command_line_parameters(args: Array[String]) = {
