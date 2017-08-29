@@ -34,12 +34,9 @@ class MyDynamoDB(IP: String) {
     println(s"Reading data from flat file: $filename")
 
     for (line <- Source.fromFile(filename).getLines) {
-
       val col = line.split("\\,").map(_.trim)
-      //println(s"${col(0)}|${col(1)}")
 
       if (col.length == 2) {
-
         if ((col(0).length() > 2) && (col(1).length() > 2)) {
 
           insertSessionId(col(0), col(1))
