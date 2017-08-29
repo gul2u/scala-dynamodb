@@ -4,13 +4,15 @@ version := "0.0.1"
 
 scalaVersion := "2.11.8"
 
-libraryDependencies ++= Seq(
-    "org.apache.spark" % "spark-core_2.11" % "2.1.1" % "provided"
-  , "org.apache.spark" % "spark-sql_2.11" % "2.1.1" % "provided"
+val sparkVersion = "2.2.0"
 
+libraryDependencies ++= Seq(
+  "org.apache.spark" %% "spark-core" % sparkVersion
+  ,"org.apache.spark" %% "spark-sql" % sparkVersion
+  ,"org.apache.spark" %% "spark-mllib" % sparkVersion
+  ,"org.apache.spark" %% "spark-streaming" % sparkVersion
+  ,"org.apache.spark" %% "spark-hive" % sparkVersion
   , "com.amazon.emr" % "emr-dynamodb-hadoop" % "4.2.0"
-  , "com.amazonaws" % "aws-java-sdk-dynamodb" % "1.10.62"
-  , "io.atlassian.aws-scala" %% "aws-scala-dynamodb"  % "6.0.0"
 
 )
 
