@@ -4,7 +4,7 @@ import com.datastax.driver.core.Cluster
 
 import scala.io.Source
 
-class Sessionization(IP: String) {
+class MyDynamoDB(IP: String) {
 
   val clusterBuilder = Cluster.builder()
   clusterBuilder.addContactPoint(IP)
